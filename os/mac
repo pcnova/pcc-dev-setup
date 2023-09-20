@@ -34,6 +34,13 @@ fix_previous_homebrew_if_necessary() {
   fi
 }
 
+# Ensure Xcode tools - since this takes long, exit until done.
+if ! test -e /Library/Developer/CommandLineTools/usr/bin; then
+  fancy_echo "Installing XCode Dev Tools and exiting - restart the script when done."
+  xcode-select --install
+  exit
+fi
+
 fix_previous_homebrew_if_necessary
 install_homebrew
 
