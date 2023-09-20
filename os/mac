@@ -55,7 +55,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "watchman"
-brew "zsh"
+# brew "zsh"
 
 # GitHub
 brew "hub"
@@ -79,4 +79,4 @@ brew "yarn"
 cask "gpg-suite"
 EOF
 
-fix_zsh_permissions
+# fix_zsh_permissions

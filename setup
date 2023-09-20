@@ -117,7 +117,7 @@ update_shell() {
 }
 
 link_dotfile gitconfig
-link_dotfile zshrc
+# link_dotfile zshrc
 link_dotfile psqlrc
 link_dotfile gitmessage
 link_dotfile gitignore
@@ -128,6 +128,9 @@ install_os_specific_packages
 install_vim_plug
 vim_up
 
+# PCC: had commented this out but realized this doesn't work anyway: in my setup
+# (MacPro with bash) the $SHELL var is still set to zsh, so this thinks I'm
+# already using it. Need to investigate why and determine what to do...
 case "$SHELL" in
   */zsh)
     fancy_echo "Already using zsh ..."
@@ -143,10 +146,10 @@ if [ ! -d "$HOME/.nvm" ]; then
 fi
 
 # extended zsh completion
-if [ ! -d ~/.zsh/completion ]; then
-  mkdir -p ~/.zsh
-  git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/completion
-fi
+# if [ ! -d ~/.zsh/completion ]; then
+#   mkdir -p ~/.zsh
+#   git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/completion
+# fi
 
 if [ -f "$HOME/.laptop.user" ]; then
   fancy_echo "Running your customizations from ~/.laptop.user..."
